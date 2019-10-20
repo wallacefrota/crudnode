@@ -1,0 +1,20 @@
+{{!-- Exibindo cada postagem do BD ao adm --}}
+<div class="container mt-5 mb-5">
+    <div class="row col-12">
+        {{#each postagens}}
+            <div class="col-md-4 col-sm-6">
+                    <div class="card">
+                        <h6 class="card-header">Author: {{author}}</h6>
+                        <div class="card-body">
+                                <h4 class="card-title">Título: {{titulo}}</h4>
+                                <p class="card-text"><strong>Frase:</strong> {{frase}}</p>
+                                <hr>
+                                <small class="text-muted">Criado em: {{createdAt}}</small><br><br>
+                                <a href="/deletar/{{id}}"><button class="btn btn-danger">Excluir</button></a>
+                        </div>
+                    </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
