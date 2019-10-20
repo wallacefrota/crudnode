@@ -1,1 +1,17 @@
-<h2>Salvo com sucesso</h2>
+{{!-- Exibindo cada postagem do BD --}}
+<div class="container mt-5 mb-5">
+    <div class="row col-12">
+        {{#each posts}}
+            <div class="col-md-4 col-sm-6">
+                    <div class="card">
+                        <h6 class="card-header">Author: {{author}}</h6>
+                        <div class="card-body">
+                                <h4 class="card-title">Título: {{titulo}}</h4>
+                                <p class="card-text"><strong>Frase: </strong> {{frase}}</p>
+                        </div>
+                    </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
