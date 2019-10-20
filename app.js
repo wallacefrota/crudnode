@@ -19,15 +19,35 @@ const Post = require('./models/Post'); // tabela do bd
   app.use(express.static(path.join(__dirname, "public")));
 
 // ROTAS
- // rota principal exibindo postagens
- app.get('/', (req, res) => {
-     res.render('home');
- })
 
- // cadastro exibindo formulário
+// cadastro exibindo formulário
 app.get("/cad", (req, res) => {
     res.render('form');
 })
+
+// rota principal exibindo postagens em ordem desc
+app.get('/', (req, res) => {
+     Post.findAll({order: [['id', 'DESC']]}).then((posts) => {
+        res.render('home', {posts: posts});
+     })
+})
+
+// rota de administração das postagens
+app.get('/admin', (req, res) => {
+    Post.findAll({order: [['id', 'DESC']]}).then((postagens) => {
+        res.render('viewpostadm', {postagens: postagens})
+    })
+})
+
+// rota excluir postagens via admin pelo id da postagem
+app.get('/deletar/:id', (req, res) => {
+    Post.destroy({where: {'id': req.params.id}}).then(() => {
+        res.redirect('/admin')
+    }).catch((error) => {
+        res.send("Erro ao deletar postagem: " + error)
+    })
+})
+
  // rota post salvando no bd
 app.post('/add', (req, res) => {
     // salvando os dados dos inputs no bd com bodyParser
@@ -41,7 +61,6 @@ app.post('/add', (req, res) => {
         res.send("Ocorreu um erro ao salvar dados: " + error)
     })
 })
-
 
 
 // acesso ao servidor porta local
