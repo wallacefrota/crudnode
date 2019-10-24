@@ -1,4 +1,5 @@
 // DEVELOPED BY - WALLACE FROTA
+// Instagram - @frotadev
 // requerendo modulos
 const express = require('express');
 const app = express(); // todas as funções do express
@@ -69,7 +70,7 @@ app.get('/deletar/:id', (req, res) => {
 // rota do form de update de dados com os valores sendo exibidos ao admin
 app.get('/update/:id', (req, res) => {
     Post.findOne({where: {'id': req.params.id}}).then((dados) => {
-        res.render('update', {id: req.params.id, dados: dados});
+        res.render('update', {dados: dados});
     })
 })
 
