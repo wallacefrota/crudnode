@@ -3,7 +3,7 @@
 // requerendo modulos
 const express = require('express');
 const app = express(); // todas as funções do express
-const handlebars = require('express-handlebars');
+const hbs = require('express-handlebars')
 const bodyParser = require('body-parser');
 const session = require('express-session')
 const flash = require("req-flash");
@@ -27,8 +27,10 @@ const Post = require('./models/Post'); // tabela do bd
       next()
   })
   // handlebars
-  app.engine('handlebars', handlebars({defaultLayout: 'main'})); // main arquivo principal, estrutura HTML
-  app.set('view engine', 'handlebars');
+  app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'main', layoutsDir: __dirname + '/views/layouts/'}));
+  app.set('views', path.join(__dirname, 'views'));
+  app.set('view engine', 'hbs');
+  
   // body parser
   app.use(bodyParser.urlencoded({extended: false}));
   app.use(bodyParser.json());
