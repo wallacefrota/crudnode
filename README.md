@@ -3,17 +3,18 @@
 # Crud Node
 Crud Usando NojeJs, Mysql, Bootstrap e outros módulos.
 
-## Previews
+# Previews
 <div>
-<img src="https://github.com/WallaceFrota/crudnode/blob/master/screenshots/preview-1.png" alt="preview-1" width="400"></img>
+<img src="https://github.com/WallaceFrota/crudnode/blob/master/screenshots/preview-1.png" alt="preview-1" width="420"></img>
 <img src="https://github.com/WallaceFrota/crudnode/blob/master/screenshots/preview-2.png" alt="preview-2" width="400"></img>
 <img src="https://github.com/WallaceFrota/crudnode/blob/master/screenshots/preview-3.png" alt="preview-3" width="400"></img>
 <img src="https://github.com/WallaceFrota/crudnode/blob/master/screenshots/preview-4.png" alt="preview-4" width="400"></img>
 </div>
-## Começando
+
+# Começando
 Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e testes.
 
-### Pré-requisitos
+# Pré-requisitos
 
 Para rodar a aplicação você precisa ter o node instalado em sua máquina.
 [Instalar](https://nodejs.org/en/docs/)
