@@ -1,0 +1,29 @@
+{{!-- Exibindo cada postagem do BD --}}
+<div class="container mt-3 mb-5">
+    <div class="text-center">
+        <h4 class="my-4">Lista de Postagens</h4>
+    </div>
+    <div class="row col-12">
+        
+        {{#each posts}}
+            <div class="col-md-4 col-sm-6 mb-3">
+                    <div class="card">
+                        <h6 class="card-header">Author: {{author}}</h6>
+                        <div class="card-body">
+                                <h4 class="card-title">Título: {{titulo}}</h4>
+                                <p class="card-text"><strong>Frase: </strong> {{frase}}</p>
+                        </div>
+                    </div>
+            </div>
+            {{else}}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="alert alert-danger col-8" role="alert">
+                        Nenhum post inserido
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
