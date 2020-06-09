@@ -4,7 +4,9 @@
   "description": "Crud Usando NojeJs, Mysql, Bootstrap e outros módulos.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +24,12 @@
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
     "express-session": "^1.17.1",
-    "req-flash": "0.0.3"
+    "mysql2": "^2.1.0",
+    "req-flash": "0.0.3",
+    "sequelize": "^5.21.12"
   },
   "devDependencies": {
-    "handlebars": "^4.7.6"
+    "handlebars": "^4.5.0",
+    "nodemon": "^2.0.4"
   }
 }
